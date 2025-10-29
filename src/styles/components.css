@@ -893,7 +893,7 @@ section h2 {
   }
   .book-card {
     width: 100%;
-    height: 165vw;
+    height: 170vw;
   }
   
   .cover-wrap {
@@ -903,7 +903,7 @@ section h2 {
     height: 100%;
   }
   .book-info {
-    height: 40vw;
+    height: 50vw;
   }
 
   /* Make buttons and pills more tappable */
@@ -965,5 +965,8 @@ section h2 {
   }
   .author-text {
     font-size: 0.95rem;
+  }
+  .search-controls input{
+    background: none;
   }
 }
