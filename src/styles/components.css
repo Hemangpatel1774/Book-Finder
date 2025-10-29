@@ -36,10 +36,12 @@ body {
 
 .book-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 8px;
+  /* Force a consistent two-column layout with flexible column width so cards appear like a portrait bookshelf */
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 16px;
   margin-top: 12px;
   padding: 0 8px;
+  align-items: start; /* ensure grid items align at top so cards equalize height visually */
 }
 .book-card {
   border: 1px solid #e6e6e6;
@@ -52,8 +54,8 @@ body {
   box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
   overflow: hidden;
   transition: transform 160ms ease, box-shadow 160ms ease;
-  /* Make all cards a consistent height */
-  height: fit-content;
+  /* Stretch to fill grid cell so cards have equal heights */
+  height: 100%;
 }
 .cover-wrap {
   position: relative;
@@ -61,7 +63,9 @@ body {
 }
 .cover-img {
   width: 100%;
-  height: 290px;
+  /* Use aspect-ratio to create a portrait cover (width:height = 2:3) so images are taller than wide */
+  aspect-ratio: 2 / 3;
+  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -502,7 +506,7 @@ body {
   max-height: 360px;
   overflow: auto;
   padding-right: 6px;
-      scrollbar-width: thin;
+  scrollbar-width: thin;
 }
 .details-subjects {
   margin-top: 12px;
@@ -783,17 +787,17 @@ section h2 {
   margin-left: 8px;
 }
 .favorites-section h2::before {
-    content: "♥";
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #e11d48;
-    font-size: 1.2rem;
-    margin-right: 6px;
-    background-color: #fff0f2;
-    width: 1.5rem;
-    height: 1.6rem;
-    border-radius: 50%;
+  content: "♥";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #e11d48;
+  font-size: 1.2rem;
+  margin-right: 6px;
+  background-color: #fff0f2;
+  width: 1.5rem;
+  height: 1.6rem;
+  border-radius: 50%;
 }
 
 @media (max-width: 520px) {
@@ -828,5 +832,138 @@ section h2 {
 @media (max-width: 420px) {
   .book-list {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Mobile-first overrides (phones) */
+@media (max-width: 480px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+
+  .app .container {
+    padding: 12px;
+  }
+
+  /* Header stacks and becomes compact */
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 0 0 10px 10px;
+  }
+  .app-header h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2.5;
+    padding-bottom: 0.2rem;
+  }
+  .app-header nav {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .app-header nav button {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+
+  /* Search controls stack vertically for easier tap targets */
+  .search-controls {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
+  .search-controls select,
+  .search-controls input,
+  .search-controls button {
+    width: 100%;
+  }
+  .search-controls input {
+    padding: 12px 14px;
+  }
+
+  /* Book grid becomes a single column for phones */
+  .book-list,
+  .favorites-list {
+    grid-template-columns: 1fr;
+  }
+  .book-card {
+    width: 100%;
+    height: 165vw;
+  }
+  
+  .cover-wrap {
+    height: 125vw;
+  }
+  .cover-img {
+    height: 100%;
+  }
+  .book-info {
+    height: 40vw;
+  }
+
+  /* Make buttons and pills more tappable */
+  .btn,
+  .btn-primary,
+  .btn-ghost {
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+  .btn-primary {
+    border-radius: 12px;
+  }
+  .modal-body{
+        max-height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  /* Pagination: full width and spaced */
+  .pagination {
+    width: 100%;
+    justify-content: center;
+    padding: 8px;
+  }
+  .pagination button {
+    flex: 0 0 auto;
+  }
+  .pager-info {
+    font-size: 0.95rem;
+  }
+
+  /* Details modal adjustments */
+  .modal-content {
+    margin: 8px;
+  }
+  .details {
+    grid-template-columns: 1fr;
+  }
+  .details-cover {
+    order: -1;
+    padding: 10px;
+  }
+  .details-cover img {
+    max-width: 220px;
+  }
+
+  /* Favorites heading full-width and compact */
+  .favorites-section h2 {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  /* Card author badge and text slightly larger for readability */
+  .author-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  .author-text {
+    font-size: 0.95rem;
   }
 }
