@@ -1,0 +1,1 @@
+Component folder: SearchBar, BookCard, BookList, Loader, ErrorMessage, Pagination, Favorites

@@ -1,0 +1,1 @@
+Pages folder: Home.jsx, BookDetails.jsx

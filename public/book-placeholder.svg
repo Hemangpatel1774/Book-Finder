@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600" fill="none">
+  <rect width="400" height="600" rx="24" fill="#F8FAFC"/>
+  <rect x="36" y="56" width="328" height="488" rx="12" fill="#fff" stroke="#E6EEF8" stroke-width="2"/>
+  <rect x="68" y="96" width="264" height="28" rx="6" fill="#EEF2FF"/>
+  <rect x="68" y="136" width="200" height="18" rx="6" fill="#F1F5F9"/>
+  <rect x="68" y="168" width="240" height="14" rx="6" fill="#F1F5F9"/>
+  <rect x="68" y="196" width="180" height="14" rx="6" fill="#F1F5F9"/>
+  <g opacity="0.9" transform="translate(68, 240)">
+    <rect width="264" height="160" rx="6" fill="#EEF2FF"/>
+    <rect x="12" y="12" width="240" height="12" rx="6" fill="#E6EEF8"/>
+    <rect x="12" y="36" width="200" height="10" rx="6" fill="#E6EEF8"/>
+    <rect x="12" y="56" width="220" height="10" rx="6" fill="#E6EEF8"/>
+  </g>
+  <g transform="translate(28, 520)">
+    <rect width="344" height="52" rx="6" fill="#fff" stroke="#E6EEF8" stroke-width="2"/>
+    <text x="172" y="34" font-family="Inter, Arial, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">No cover</text>
+  </g>
+</svg>

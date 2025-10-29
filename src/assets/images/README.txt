@@ -1,0 +1,1 @@
+Place logo or placeholder images here (e.g. logo.png).
