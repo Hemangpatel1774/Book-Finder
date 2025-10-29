@@ -37,7 +37,7 @@ body {
 .book-list {
   display: grid;
   /* Force a consistent two-column layout with flexible column width so cards appear like a portrait bookshelf */
-  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  grid-template-columns: repeat(7, minmax(240px, 1fr));
   gap: 16px;
   margin-top: 12px;
   padding: 0 8px;
@@ -968,5 +968,6 @@ section h2 {
   }
   .search-controls input{
     background: none;
+    border: 1px solid #e6eefc;
   }
 }
